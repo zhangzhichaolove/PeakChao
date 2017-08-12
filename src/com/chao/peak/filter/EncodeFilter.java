@@ -1,6 +1,7 @@
 package com.chao.peak.filter;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
@@ -8,6 +9,7 @@ import java.io.IOException;
  * 全局中文乱码过滤
  * Created by Chao on 2017/8/11.
  */
+@WebFilter("/*")
 public class EncodeFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -38,4 +40,5 @@ public class EncodeFilter implements Filter {
         super.finalize();
         System.out.println("EncodeFilter被回收了!");
     }
+
 }
