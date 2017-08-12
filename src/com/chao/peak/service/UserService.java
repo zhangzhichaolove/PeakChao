@@ -24,4 +24,12 @@ public class UserService {
     public boolean login(UserBean userBean) throws SQLException {
         return userDao.login(userBean);
     }
+
+    public void active(String activeCode) {
+        try {
+            userDao.active(activeCode);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
