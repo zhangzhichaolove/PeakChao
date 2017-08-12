@@ -31,5 +31,6 @@
 <div style="text-align:center;clear:both;margin-top:20px">
     <script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
     <script src="/follow.js" type="text/javascript"></script>
+</div>
 </body>
 </html>
