@@ -1,0 +1,73 @@
+su - root  拿到权限
+sudo passwd root  修改Root密码
+
+
+数据库拒绝访问处理：
+
+mysql -u root -p
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'chaochao' WITH GRANT OPTION;
+
+FLUSH PRIVILEGES;
+
+关闭防火墙：
+
+ufw disable
+
+安装SSH
+
+sudo apt-get install openssh-server 安装ssh
+
+sudo service ssh start  启动服务re
+
+
+sudo vim /etc/ssh/sshd_config
+#PermitRootLogin without-password  注释
+PermitRootLogin yes		添加
+
+
+设置默认root密码：
+
+sudo passwd
+
+查看服务：
+
+netstat -ntpl
+
+卸载：
+
+sudo apt-get remove --purge tomcat8
+
+
+更换静态IP（eth0--ens33）：
+
+vi /etc/network/interfaces
+
+auto eth0
+iface eth0 inet static
+address 192.168.0.188    
+netmask 255.255.255.0
+gateway 192.168.0.1
+dns-nameserver 8.8.8.8
+
+重启网络：
+
+sudo /etc/init.d/networking restart
+
+
+
+
+
+
+
+
+
+
+:w   保存文件但不退出vi
+:w file 将修改另外保存到file中，不退出vi
+:w!   强制保存，不推出vi
+:wq  保存文件并退出vi
+:wq! 强制保存文件，并退出vi
+q:  不保存文件，退出vi
+:q! 不保存文件，强制退出vi
+:e! 放弃所有修改，从上次保存文件开始再编辑
