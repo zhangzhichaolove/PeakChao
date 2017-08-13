@@ -4,6 +4,7 @@ import com.chao.peak.bean.UserBean;
 import com.chao.peak.service.UserService;
 import com.chao.peak.util.BaseHttpServlet;
 import com.chao.peak.util.CommonsUtils;
+import com.chao.peak.util.ExecutorServiceUtils;
 import com.chao.peak.util.MailUtils;
 import org.apache.commons.beanutils.BeanUtils;
 
@@ -14,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Created by Chao on 2017/8/12.
@@ -43,11 +46,17 @@ public class RegisterServlet extends BaseHttpServlet {
                 String emailMsg = "恭喜您注册成功，请点击下面的连接进行激活账户"
                         + "<a href='http://www.peakchao.com:8080/active?activeCode=" + userBean.getActivation() + "'>"
                         + "http://www.peakchao.com:8080/active?activeCode=" + userBean.getActivation() + "</a>";
-                try {
-                    MailUtils.sendMail("13594347817@126.com", emailMsg);
-                } catch (MessagingException e) {
-                    e.printStackTrace();
-                }
+                ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+                ExecutorServiceUtils.getInstance().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            MailUtils.sendMail(userBean.getEmail(), emailMsg);
+                        } catch (MessagingException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
             } else {
                 resp.sendRedirect(req.getContextPath() + "/register.jsp");
             }

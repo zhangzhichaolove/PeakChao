@@ -8,7 +8,7 @@ import java.util.Properties;
 
 public class MailUtils {
 
-    public static void sendMail(String email, String emailMsg)
+    public synchronized static void sendMail(String email, String emailMsg)
             throws MessagingException {
         // 1.创建一个程序与邮件服务器会话对象 Session
 
