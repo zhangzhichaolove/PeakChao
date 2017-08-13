@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
+ * 主页入口
  * Created by Chao on 2017/8/11.
  */
 @WebServlet("/main")
