@@ -18,7 +18,8 @@ public class MainServlet extends HttpServlet {
 //        resp.getWriter().write("----");
 //        req.setAttribute("dayCount", 10);
 //        req.setAttribute("visitCount", 20);
-        resp.sendRedirect("index.jsp");//重定向
+        //resp.sendRedirect("index.jsp");//重定向
+        req.getRequestDispatcher(req.getContextPath() + "/index.jsp").forward(req, resp);
     }
 
     @Override
