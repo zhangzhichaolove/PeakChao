@@ -21,6 +21,6 @@ public abstract class BaseHttpServlet extends HttpServlet {
     }
 
 
-    public abstract void httpRequest(HttpServletRequest req, HttpServletResponse resp);
+    public abstract void httpRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException;
 
 }

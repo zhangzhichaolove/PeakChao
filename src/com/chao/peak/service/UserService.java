@@ -32,4 +32,16 @@ public class UserService {
             e.printStackTrace();
         }
     }
+
+
+    //校验用户名是否存在
+    public boolean checkUsername(String username) {
+        Long isExist = 0L;
+        try {
+            isExist = userDao.checkUsername(username);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return isExist > 0;
+    }
 }

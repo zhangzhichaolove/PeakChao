@@ -22,11 +22,38 @@
     }
 </style>
 <script type="text/javascript">
+    //自定义校验规则
+    $.validator.addMethod(
+        //规则的名称
+        "checkUsername",
+        //校验的函数
+        function (value, element, params) {
+            //定义一个标志
+            var flag = false;
+            //value:输入的内容
+            //element:被校验的元素对象
+            //params：规则对应的参数值
+            //目的：对输入的username进行ajax校验
+            $.ajax({
+                "async": false,
+                "url": "${pageContext.request.contextPath}/checkUsername",
+                "data": {"username": value},
+                "type": "POST",
+                "dataType": "json",
+                "success": function (data) {
+                    flag = data.isExist;
+                }
+            });
+            //返回false代表该校验器不通过
+            return !flag;
+        }
+    );
     $(function () {
         $("#registerForm").validate({
             rules: {
                 "username": {
-                    "required": true
+                    "required": true,
+                    "checkUsername": true
                 },
                 "password": {
                     "required": true,
@@ -47,7 +74,8 @@
             },
             messages: {
                 "username": {
-                    "required": "用户名不能为空!"
+                    "required": "用户名不能为空!",
+                    "checkUsername": "用户名已存在"
                 },
                 "password": {
                     "required": "密码不能为空",
