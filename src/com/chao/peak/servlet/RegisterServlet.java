@@ -46,7 +46,6 @@ public class RegisterServlet extends BaseHttpServlet {
                 String emailMsg = "恭喜您注册成功，请点击下面的连接进行激活账户"
                         + "<a href='http://www.peakchao.com:8080/active?activeCode=" + userBean.getActivation() + "'>"
                         + "http://www.peakchao.com:8080/active?activeCode=" + userBean.getActivation() + "</a>";
-                ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
                 ExecutorServiceUtils.getInstance().execute(new Runnable() {
                     @Override
                     public void run() {
