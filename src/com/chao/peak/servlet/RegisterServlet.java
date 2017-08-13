@@ -45,7 +45,6 @@ public class RegisterServlet extends BaseHttpServlet {
                         + "http://www.peakchao.com:8080/active?activeCode=" + userBean.getActivation() + "</a>";
                 try {
                     MailUtils.sendMail("13594347817@126.com", emailMsg);
-                    System.out.println("ok");
                 } catch (MessagingException e) {
                     e.printStackTrace();
                 }

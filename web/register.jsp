@@ -10,6 +10,11 @@
 <head>
     <title>注册</title>
 </head>
+<style>
+    body {
+        text-align: center
+    }
+</style>
 <body>
 
 <h2>注册</h2>
