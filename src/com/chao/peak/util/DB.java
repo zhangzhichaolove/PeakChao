@@ -3,6 +3,10 @@ package com.chao.peak.util;
 import com.chao.peak.bean.WebSite;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Connection;
@@ -60,5 +64,30 @@ public class DB {
     public void createWebSite() throws SQLException {
         QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
         qr.update("INSERT INTO website VALUES(?,?,?)", 1, 1, 0);
+    }
+
+    @Test
+    public void fun1() {
+        Configuration cfg = new Configuration().configure();
+        SessionFactory sessionFactory = cfg.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+
+//        Customer customer = new Customer();//增加
+//        customer.setCust_name("百度");
+//        customer.setCust_phone("13594347817");
+//        session.save(customer);
+
+        Customer customer = session.get(Customer.class, 1L);//查询
+//        customer.setCust_name("Google谷歌");
+//        session.update(customer);//修改
+        System.out.println(customer);
+
+//        session.delete(customer);//删除
+
+        transaction.commit();
+        //transaction.rollback();
+        session.close();
+        sessionFactory.close();
     }
 }

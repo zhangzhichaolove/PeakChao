@@ -1,7 +1,8 @@
 package com.chao.peak.servlet;
 
 import com.chao.peak.bean.UserBean;
-import com.chao.peak.service.UserService;
+import com.chao.peak.service.UserServiceI;
+import com.chao.peak.servlet.impl.RegisterServletImpl;
 import com.chao.peak.util.BaseHttpServlet;
 import com.chao.peak.util.CommonsUtils;
 import com.chao.peak.util.ExecutorServiceUtils;
@@ -36,8 +37,10 @@ public class RegisterServlet extends BaseHttpServlet {
         userBean.setId(null);
         userBean.setStatus(null);
         userBean.setActivation(CommonsUtils.getUUID());
-        UserService userService = new UserService();
-        boolean isRegister = userService.register(userBean);
+
+        UserServiceI userServiceI = new RegisterServletImpl();
+
+        boolean isRegister = userServiceI.register(userBean);
         try {
             if (isRegister) {//注册成功
                 resp.sendRedirect(req.getContextPath() + "/login.jsp");

@@ -1,7 +1,8 @@
 package com.chao.peak.servlet;
 
 import com.chao.peak.bean.UserBean;
-import com.chao.peak.service.UserService;
+import com.chao.peak.service.UserServiceI;
+import com.chao.peak.servlet.impl.RegisterServletImpl;
 import com.chao.peak.util.BaseHttpServlet;
 import org.apache.commons.beanutils.BeanUtils;
 
@@ -10,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.sql.SQLException;
 import java.util.Map;
 
 /**
@@ -30,13 +30,8 @@ public class LoginServlet extends BaseHttpServlet {
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
-        UserService userService = new UserService();
-        boolean isRegister = false;
-        try {
-            isRegister = userService.login(userBean);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        UserServiceI userServiceI = new RegisterServletImpl();
+        boolean isRegister = userServiceI.login(userBean);
         try {
             if (isRegister) {//登陆成功
                 resp.sendRedirect(req.getContextPath() + "/json");

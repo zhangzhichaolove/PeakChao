@@ -39,4 +39,6 @@
         <welcome-file>default.jsp</welcome-file>
     </welcome-file-list>
 
+    <display-name>hibernate_crm</display-name>
+
 </web-app>
