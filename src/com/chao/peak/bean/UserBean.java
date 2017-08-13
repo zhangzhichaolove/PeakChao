@@ -58,4 +58,16 @@ public class UserBean {
     public void setActivation(String activation) {
         this.activation = activation;
     }
+
+    @Override
+    public String toString() {
+        return "UserBean{" +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", status='" + status + '\'' +
+                ", activation='" + activation + '\'' +
+                '}';
+    }
 }
