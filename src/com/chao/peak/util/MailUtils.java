@@ -13,7 +13,7 @@ public class MailUtils {
         // 1.创建一个程序与邮件服务器会话对象 Session
 
         Properties props = new Properties();
-        //props.setProperty("mail.debug", "true");
+        props.setProperty("mail.debug", "true");
         props.setProperty("mail.transport.protocol", "SMTP");
         props.setProperty("mail.host", "smtp.126.com");
         props.setProperty("mail.smtp.auth", "true");// 指定验证为true
