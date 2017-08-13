@@ -1,0 +1,62 @@
+1. sudo apt-get install mysql-server
+
+2. apt-get isntall mysql-client
+
+3.  sudo apt-get install libmysqlclient-dev
+
+sudo netstat -tap | grep mysql
+
+mysql -u root -p
+
+show databases;   show tables;
+
+grant all privileges on *.* to 'root' @'%' identified by 'chaochao';
+flush privileges;
+
+sudo ufw allow 3306 
+
+service mysql restart
+
+
+sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf +43
+# bind-address = 127.0.0.1
+
+service mysql restart
+
+拒绝链接
+mysql>use mysql;
+
+mysql>update user set host = '%' where user = 'root';
+
+mysql>select host, user from user;
+
+grant all privileges on *.* to 'root' @'%' identified by 'chaochao';
+flush privileges;
+
+重启
+
+打开3306端口，命令如下： 
+sudo ufw allow 3306 
+开启防火墙，命令如下： 
+sudo ufw enable 
+
+sudo ufw default deny
+查看防火墙的状态： 
+sudo ufw status
+
+或者，运行查看端口号的命令，该命令如下： 
+show global variables like 'port';
+
+Error:
+E: 无法获得锁 /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
+E: 无法锁定管理目录(/var/lib/dpkg/)，是否有其他进程正占用它？
+
+解 决方法一：
+#:ps -aux (列出进程，形式如)
+root 5765 0.0 1.0 18204 15504 ? SN 04:02 0:00 apt-get -qq -d
+找到最后一列以apt-get 开头的进程
+#:sudo kill -9 该进程的PID
+
+解决方法二：
+#:sudo rm /var/cache/apt/archives/lock
+#:sudo rm /var/lib/dpkg/lock
