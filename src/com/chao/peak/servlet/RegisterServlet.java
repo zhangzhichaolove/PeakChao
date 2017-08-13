@@ -15,8 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 /**
  * Created by Chao on 2017/8/12.
@@ -58,6 +56,7 @@ public class RegisterServlet extends BaseHttpServlet {
                 });
             } else {
                 resp.sendRedirect(req.getContextPath() + "/register.jsp");
+                //req.getRequestDispatcher(req.getContextPath() + "/register.jsp").forward(req, resp);
             }
         } catch (IOException e) {
             e.printStackTrace();
