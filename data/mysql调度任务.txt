@@ -1,0 +1,30 @@
+开启事件计划
+SET GLOBAL event_scheduler = ON;
+SET @@global.event_scheduler = ON;
+SET GLOBAL event_scheduler = 1;
+SET @@global.event_scheduler = 1;
+
+事件计划查询
+SHOW VARIABLES LIKE 'event_scheduler'
+
+
+关闭事件计划
+SET GLOBAL event_scheduler = OFF;
+SET @@global.event_scheduler = OFF;
+SET GLOBAL event_scheduler = 0;
+SET @@global.event_scheduler = 0;
+
+显示事件列表
+show events;
+show events\G;
+
+自增+1
+UPDATE website SET dayCount=dayCount+1 WHERE id=1;
+
+定时计划
+CREATE EVENT `NewEvent`
+ON SCHEDULE EVERY 1 DAY STARTS '2018-08-08 08:08:08'
+ON COMPLETION NOT PRESERVE
+ENABLE
+DO
+UPDATE website SET dayCount=dayCount+1 WHERE id=1;;
