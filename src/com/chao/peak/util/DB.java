@@ -78,7 +78,7 @@ public class DB {
 //        customer.setCust_phone("13594347817");
 //        session.save(customer);
 
-        Customer customer = session.get(Customer.class, 1L);//查询
+        WebSite customer = session.get(WebSite.class, 1L);//查询
 //        customer.setCust_name("Google谷歌");
 //        session.update(customer);//修改
         System.out.println(customer);
