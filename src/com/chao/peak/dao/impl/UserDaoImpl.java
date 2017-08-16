@@ -5,7 +5,6 @@ import com.chao.peak.dao.UserDaoI;
 import com.chao.peak.util.HibernateUtils;
 import org.hibernate.*;
 import org.hibernate.criterion.Projections;
-import org.hibernate.criterion.Restrictions;
 import org.junit.jupiter.api.Test;
 
 import java.io.Serializable;

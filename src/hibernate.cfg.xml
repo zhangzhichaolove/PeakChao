@@ -53,6 +53,7 @@
          -->
         <mapping resource="com/chao/peak/util/Customer.hbm.xml"/>
         <mapping resource="com/chao/peak/bean/User.hbm.xml"/>
+        <mapping resource="com/chao/peak/bean/WebSite.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>
