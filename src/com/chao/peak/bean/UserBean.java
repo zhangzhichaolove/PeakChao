@@ -4,18 +4,18 @@ package com.chao.peak.bean;
  * Created by Chao on 2017/8/12.
  */
 public class UserBean {
-    private String id;
+    private Integer id;
     private String username;
     private String password;
     private String email;
     private String status;
     private String activation;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
