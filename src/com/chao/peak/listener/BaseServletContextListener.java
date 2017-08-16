@@ -1,5 +1,8 @@
 package com.chao.peak.listener;
 
+import com.chao.peak.util.HibernateUtils;
+import org.hibernate.Session;
+
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
@@ -21,6 +24,8 @@ public class BaseServletContextListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         System.out.println("context创建了！");
+        Session session = HibernateUtils.openSession();
+        System.out.println(session);
     }
 
     /**
