@@ -45,7 +45,7 @@ public class BaseServletContextListener implements ServletContextListener {
                 try {
                     List<WebSite> webSite = findWebSite();
                     if (webSite != null && webSite.size() > 0) {
-                        updateWebSite(webSite.get(0).getId(), webSite.get(0).getDayCount() + 1);
+                        //updateWebSite(webSite.get(0).getId(), webSite.get(0).getDayCount() + 1);
                     } else {
                         createWebSite();
                     }
