@@ -1,6 +1,7 @@
 package com.chao.peak.dao.impl;
 
 import com.chao.peak.bean.UserBean;
+import com.chao.peak.bean.WebSite;
 import com.chao.peak.dao.UserDaoI;
 import com.chao.peak.util.HibernateUtils;
 import org.hibernate.*;
@@ -50,6 +51,21 @@ public class UserDaoImpl implements UserDaoI {
         transaction.commit();
         session.close();
         return list.size() > 0;
+    }
+
+    /**
+     * 服务器统计获取
+     */
+    @Override
+    public WebSite findStatistics() {
+        Session session = HibernateUtils.openSession();
+        Transaction transaction = session.beginTransaction();
+        Criteria criteria = session.createCriteria(WebSite.class);
+        WebSite webSite = (WebSite) criteria.uniqueResult();
+        System.out.println(webSite);
+        transaction.commit();
+        session.close();
+        return webSite;
     }
 
     @Test

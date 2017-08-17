@@ -1,6 +1,7 @@
 package com.chao.peak.servlet.impl;
 
 import com.chao.peak.bean.UserBean;
+import com.chao.peak.bean.WebSite;
 import com.chao.peak.dao.UserDaoI;
 import com.chao.peak.dao.impl.UserDaoImpl;
 import com.chao.peak.service.UserServiceI;
@@ -19,5 +20,10 @@ public class RegisterServletImpl implements UserServiceI {
     @Override
     public boolean login(UserBean userBean) {
         return userDaoI.login(userBean);
+    }
+
+    @Override
+    public WebSite findStatistics() {
+        return userDaoI.findStatistics();
     }
 }

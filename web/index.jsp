@@ -22,6 +22,18 @@
             width: 920px;
             margin: 40px auto;
         }
+
+        .text {
+            text-align: center;
+            /*margin-top: 10%;*/
+            height: 100px;
+            color: red;
+            /*background:red;*/
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
     </style>
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="js/zzsc.js"></script>
@@ -32,5 +44,13 @@
     <script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
     <script src="/follow.js" type="text/javascript"></script>
 </div>
+
+<div class="text">服务器运行天数：${webSite.dayCount}<%
+//    WebSite date = (WebSite) request.getAttribute("webSite");
+//    out.println(date.getDayCount());
+%>天&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    当前访问总数：${webSite.visitCount}次
+</div>
+<%--<div class="text" style=" text-align:center;">这里是想要居中的文字</div>--%>
 </body>
 </html>
