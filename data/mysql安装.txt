@@ -23,7 +23,7 @@ sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf +43
 
 service mysql restart
 
-¾Ü¾øÁ´½Ó
+æ‹’ç»é“¾æ¥
 mysql>use mysql;
 
 mysql>update user set host = '%' where user = 'root';
@@ -33,30 +33,30 @@ mysql>select host, user from user;
 grant all privileges on *.* to 'root' @'%' identified by 'chaochao';
 flush privileges;
 
-ÖØÆô
+é‡å¯
 
-´ò¿ª3306¶Ë¿Ú£¬ÃüÁîÈçÏÂ£º 
-sudo ufw allow 3306 
-¿ªÆô·À»ğÇ½£¬ÃüÁîÈçÏÂ£º 
-sudo ufw enable 
+æ‰“å¼€3306ç«¯å£ï¼Œå‘½ä»¤å¦‚ä¸‹ï¼š
+sudo ufw allow 3306
+å¼€å¯é˜²ç«å¢™ï¼Œå‘½ä»¤å¦‚ä¸‹ï¼š
+sudo ufw enable
 
 sudo ufw default deny
-²é¿´·À»ğÇ½µÄ×´Ì¬£º 
+æŸ¥çœ‹é˜²ç«å¢™çš„çŠ¶æ€ï¼š
 sudo ufw status
 
-»òÕß£¬ÔËĞĞ²é¿´¶Ë¿ÚºÅµÄÃüÁî£¬¸ÃÃüÁîÈçÏÂ£º 
+æˆ–è€…ï¼Œè¿è¡ŒæŸ¥çœ‹ç«¯å£å·çš„å‘½ä»¤ï¼Œè¯¥å‘½ä»¤å¦‚ä¸‹ï¼š
 show global variables like 'port';
 
 Error:
-E: ÎŞ·¨»ñµÃËø /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
-E: ÎŞ·¨Ëø¶¨¹ÜÀíÄ¿Â¼(/var/lib/dpkg/)£¬ÊÇ·ñÓĞÆäËû½ø³ÌÕıÕ¼ÓÃËü£¿
+E: æ— æ³•è·å¾—é” /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
+E: æ— æ³•é”å®šç®¡ç†ç›®å½•(/var/lib/dpkg/)ï¼Œæ˜¯å¦æœ‰å…¶ä»–è¿›ç¨‹æ­£å ç”¨å®ƒï¼Ÿ
 
-½â ¾ö·½·¨Ò»£º
-#:ps -aux (ÁĞ³ö½ø³Ì£¬ĞÎÊ½Èç)
+è§£ å†³æ–¹æ³•ä¸€ï¼š
+#:ps -aux (åˆ—å‡ºè¿›ç¨‹ï¼Œå½¢å¼å¦‚)
 root 5765 0.0 1.0 18204 15504 ? SN 04:02 0:00 apt-get -qq -d
-ÕÒµ½×îºóÒ»ÁĞÒÔapt-get ¿ªÍ·µÄ½ø³Ì
-#:sudo kill -9 ¸Ã½ø³ÌµÄPID
+æ‰¾åˆ°æœ€åä¸€åˆ—ä»¥apt-get å¼€å¤´çš„è¿›ç¨‹
+#:sudo kill -9 è¯¥è¿›ç¨‹çš„PID
 
-½â¾ö·½·¨¶ş£º
+è§£å†³æ–¹æ³•äºŒï¼š
 #:sudo rm /var/cache/apt/archives/lock
 #:sudo rm /var/lib/dpkg/lock

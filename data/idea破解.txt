@@ -1,10 +1,10 @@
-ÔÚ°²×°µÄideaÏÂÃæµÄbinÄ¿Â¼ÏÂÃæÓĞ2¸öÎÄ¼ş £º Ò»¸öÊÇidea64.exe.vmoptions£¬»¹ÓĞÒ»¸öÊÇidea.exe.vmoptions
+åœ¨å®‰è£…çš„ideaä¸‹é¢çš„binç›®å½•ä¸‹é¢æœ‰2ä¸ªæ–‡ä»¶ ï¼š ä¸€ä¸ªæ˜¯idea64.exe.vmoptionsï¼Œè¿˜æœ‰ä¸€ä¸ªæ˜¯idea.exe.vmoptions
 
-ÓÃ¼ÇÊÂ±¾´ò¿ª£¨À¶É«¿ò£© ·Ö±ğÔÚ×îÏÂÃæÒ»ĞĞÔö¼ÓÒ»ĞĞ
+ç”¨è®°äº‹æœ¬æ‰“å¼€ï¼ˆè“è‰²æ¡†ï¼‰ åˆ†åˆ«åœ¨æœ€ä¸‹é¢ä¸€è¡Œå¢åŠ ä¸€è¡Œ
 
 -javaagent:F:\idea\IntelliJ IDEA 2017.1\bin\JetbrainsCrack-2.6.2.jar
 
-¡°F:\idea\IntelliJ IDEA 2017.1\bin\JetbrainsCrack-2.6.2.jar¡±ÊÇ¶ÔÓ¦µÄJetbrainsCrack-2.6.2.jarµÄÎ»ÖÃ¡£
+â€œF:\idea\IntelliJ IDEA 2017.1\bin\JetbrainsCrack-2.6.2.jarâ€æ˜¯å¯¹åº”çš„JetbrainsCrack-2.6.2.jarçš„ä½ç½®ã€‚
 
 ThisCrackLicenseId-{  
 "licenseId":"ThisCrackLicenseId",  
