@@ -1,8 +1,8 @@
-su - root  ÄÃµ½È¨ÏŞ
-sudo passwd root  ĞŞ¸ÄRootÃÜÂë
+su - root  æ‹¿åˆ°æƒé™
+sudo passwd root  ä¿®æ”¹Rootå¯†ç 
 
 
-Êı¾İ¿â¾Ü¾ø·ÃÎÊ´¦Àí£º
+æ•°æ®åº“æ‹’ç»è®¿é—®å¤„ç†ï¼š
 
 mysql -u root -p
 
@@ -10,47 +10,47 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'chaochao' WITH GRANT OP
 
 FLUSH PRIVILEGES;
 
-¹Ø±Õ·À»ğÇ½£º
+å…³é—­é˜²ç«å¢™ï¼š
 
 ufw disable
 
-°²×°SSH
+å®‰è£…SSH
 
-sudo apt-get install openssh-server °²×°ssh
+sudo apt-get install openssh-server å®‰è£…ssh
 
-sudo service ssh start  Æô¶¯·şÎñre
+sudo service ssh start  å¯åŠ¨æœåŠ¡re
 
 
 sudo vim /etc/ssh/sshd_config
-#PermitRootLogin without-password  ×¢ÊÍ
-PermitRootLogin yes		Ìí¼Ó
+#PermitRootLogin without-password  æ³¨é‡Š
+PermitRootLogin yes		æ·»åŠ 
 
 
-ÉèÖÃÄ¬ÈÏrootÃÜÂë£º
+è®¾ç½®é»˜è®¤rootå¯†ç ï¼š
 
 sudo passwd
 
-²é¿´·şÎñ£º
+æŸ¥çœ‹æœåŠ¡ï¼š
 
 netstat -ntpl
 
-Ğ¶ÔØ£º
+å¸è½½ï¼š
 
 sudo apt-get remove --purge tomcat8
 
 
-¸ü»»¾²Ì¬IP£¨eth0--ens33£©£º
+æ›´æ¢é™æ€IPï¼ˆeth0--ens33ï¼‰ï¼š
 
 vi /etc/network/interfaces
 
 auto eth0
 iface eth0 inet static
-address 192.168.0.188    
+address 192.168.0.188
 netmask 255.255.255.0
 gateway 192.168.0.1
 dns-nameserver 8.8.8.8
 
-ÖØÆôÍøÂç£º
+é‡å¯ç½‘ç»œï¼š
 
 sudo /etc/init.d/networking restart
 
@@ -63,11 +63,11 @@ sudo /etc/init.d/networking restart
 
 
 
-:w   ±£´æÎÄ¼şµ«²»ÍË³övi
-:w file ½«ĞŞ¸ÄÁíÍâ±£´æµ½fileÖĞ£¬²»ÍË³övi
-:w!   Ç¿ÖÆ±£´æ£¬²»ÍÆ³övi
-:wq  ±£´æÎÄ¼ş²¢ÍË³övi
-:wq! Ç¿ÖÆ±£´æÎÄ¼ş£¬²¢ÍË³övi
-q:  ²»±£´æÎÄ¼ş£¬ÍË³övi
-:q! ²»±£´æÎÄ¼ş£¬Ç¿ÖÆÍË³övi
-:e! ·ÅÆúËùÓĞĞŞ¸Ä£¬´ÓÉÏ´Î±£´æÎÄ¼ş¿ªÊ¼ÔÙ±à¼­
+:w   ä¿å­˜æ–‡ä»¶ä½†ä¸é€€å‡ºvi
+:w file å°†ä¿®æ”¹å¦å¤–ä¿å­˜åˆ°fileä¸­ï¼Œä¸é€€å‡ºvi
+:w!   å¼ºåˆ¶ä¿å­˜ï¼Œä¸æ¨å‡ºvi
+:wq  ä¿å­˜æ–‡ä»¶å¹¶é€€å‡ºvi
+:wq! å¼ºåˆ¶ä¿å­˜æ–‡ä»¶ï¼Œå¹¶é€€å‡ºvi
+q:  ä¸ä¿å­˜æ–‡ä»¶ï¼Œé€€å‡ºvi
+:q! ä¸ä¿å­˜æ–‡ä»¶ï¼Œå¼ºåˆ¶é€€å‡ºvi
+:e! æ”¾å¼ƒæ‰€æœ‰ä¿®æ”¹ï¼Œä»ä¸Šæ¬¡ä¿å­˜æ–‡ä»¶å¼€å§‹å†ç¼–è¾‘
