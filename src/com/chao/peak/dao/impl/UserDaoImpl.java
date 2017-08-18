@@ -4,8 +4,8 @@ import com.chao.peak.bean.UserBean;
 import com.chao.peak.bean.WebSite;
 import com.chao.peak.dao.UserDaoI;
 import com.chao.peak.util.HibernateUtils;
+import com.chao.peak.util.JsonUtil;
 import org.hibernate.*;
-import org.hibernate.criterion.Projections;
 import org.junit.jupiter.api.Test;
 
 import java.io.Serializable;
@@ -105,10 +105,12 @@ public class UserDaoImpl implements UserDaoI {
         Criteria criteria = session.createCriteria(UserBean.class);
         //criteria.add(Restrictions.eq("username", "test"));//条件
         //criteria.add(Restrictions.or(Restrictions.eq("username", "test"), Restrictions.eq("username", "chao")));//条件
-        criteria.setProjection(Projections.rowCount());//聚合函数
-        //List<UserBean> list = criteria.list();
-        Long list = (Long) criteria.uniqueResult();
-        System.out.println(list);
+//        criteria.setProjection(Projections.rowCount());//聚合函数
+        List<UserBean> list = criteria.list();
+        String s = JsonUtil.toJsonArray(list);
+        System.out.println(s);
+//        Long list = (Long) criteria.uniqueResult();
+//        System.out.println(list);
         transaction.commit();
         session.close();
     }

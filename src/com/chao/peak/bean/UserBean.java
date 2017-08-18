@@ -8,7 +8,7 @@ public class UserBean {
     private String username;
     private String password;
     private String email;
-    private String status;
+    private transient String status;
     private String activation;
 
     public Integer getId() {
