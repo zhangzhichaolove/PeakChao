@@ -8,8 +8,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
 /**
  * Created by Chao on 2017/8/18.
  */
@@ -23,20 +21,31 @@ public class JsonUtil {
 
     public static String toJsonData(Object bean) {
         Result result = new Result();
+        result.setCode(200);
+        result.setMsg("成功!");
         result.setData(bean);
         return gson.toJson(result);
     }
 
-    public static <T> String toJsonArray(List<T> bean) {
+    public static String toJsonData(int code, String msg) {
         Result result = new Result();
-        result.setData(bean);
+        result.setCode(code);
+        result.setMsg(msg);
         return gson.toJson(result);
     }
+
+//    public static <T> String toJsonArray(List<T> bean) {
+//        Result result = new Result();
+//        result.setCode(200);
+//        result.setMsg("成功!");
+//        result.setData(bean);
+//        return gson.toJson(result);
+//    }
 
     @Test
     public void testJson() {
         UserBean bean = new UserBean();
-        bean.setUsername("test");
+        bean.setUsername("13594347817");
         bean.setEmail("test@qq.com");
         String s = toJson(bean);
         System.out.println(s);
@@ -57,7 +66,7 @@ public class JsonUtil {
         };
         Gson gson = new GsonBuilder().setExclusionStrategies(strategy).serializeNulls().create();
         UserBean bean = new UserBean();
-        bean.setUsername("test");
+        bean.setUsername("13594347817");
         bean.setEmail("test@qq.com");
         String s = gson.toJson(bean);
         System.out.println(s);

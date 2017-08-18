@@ -107,7 +107,7 @@ public class UserDaoImpl implements UserDaoI {
         //criteria.add(Restrictions.or(Restrictions.eq("username", "test"), Restrictions.eq("username", "chao")));//条件
 //        criteria.setProjection(Projections.rowCount());//聚合函数
         List<UserBean> list = criteria.list();
-        String s = JsonUtil.toJsonArray(list);
+        String s = JsonUtil.toJson(list);
         System.out.println(s);
 //        Long list = (Long) criteria.uniqueResult();
 //        System.out.println(list);
