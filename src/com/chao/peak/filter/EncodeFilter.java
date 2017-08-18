@@ -21,7 +21,7 @@ public class EncodeFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         System.out.println("收到请求:" + request.getMethod() + "地址：" + request.getLocalAddr() + "端口：" + request.getLocalPort());
         if (request.getMethod().equals("POST")) {
-            servletRequest.setCharacterEncoding("UTF-8");
+            servletResponse.setCharacterEncoding("UTF-8");
             filterChain.doFilter(servletRequest, servletResponse);
         } else {
             servletResponse.setContentType("text/html;charset=utf-8");
