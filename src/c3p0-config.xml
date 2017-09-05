@@ -14,10 +14,14 @@
         　　     <!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
         <property name="acquireIncrement">3</property>
         　　     <!-- 初始化数据库连接池时连接的数量 -->
-        <property name="initialPoolSize">10</property>
+        <property name="initialPoolSize">5</property>
         <!-- 数据库连接池中的最小的数据库连接数 -->
-        <property name="minPoolSize">2</property>
+        <property name="minPoolSize">5</property>
         <!-- 数据库连接池中的最大的数据库连接数 -->
         <property name="maxPoolSize">10</property>
+            
+        <property name="testConnectionOnCheckout" value="true"/>
+        <property name="testConnectionOnCheckin" value="false"/>
+        <property name="preferredTestQuery" value="select 1"/>
     </default-config>
 </c3p0-config>

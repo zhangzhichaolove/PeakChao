@@ -44,6 +44,9 @@ sudo ufw default deny
 查看防火墙的状态：
 sudo ufw status
 
+显示数据库连接状态
+show processlist
+
 或者，运行查看端口号的命令，该命令如下：
 show global variables like 'port';
 
