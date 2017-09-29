@@ -1,0 +1,36 @@
+上传完成后，进入该文件目录，使用如下命令解压：
+sudo tar -zxvf apache-tomcat-9.0.0.M26.tar.gz
+
+移动到指定目录
+sudo mv apache-tomcat-8.5.9 /usr/tomcat/
+
+修改一下tomcat文件夹的使用权限，否则可能在当前用户下不能进入bin目录：
+cd /usr
+sudo chmod 755 -R tomcat
+
+编辑启动配置
+vi ./startup.sh
+
+#set java environment
+export JAVA_HOME=/usr/local/chao/java/jdk1.8.0_144
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:$PATH
+
+#tomcat
+export TOMCAT_HOME=/usr/local/chao/tomcat/apache-tomcat-9.0.0.M26
+
+开启
+sudo ./startup.sh
+
+关闭
+sudo ./shutdown.sh
+
+开启端口
+sudo ufw allow 8080
+
+设置为tomcat开机自启动
+sudo vi /etc/rc.local
+
+在最后一行之前加入如下信息
+/usr/local/chao/tomcat/apache-tomcat-9.0.0.M26/bin/startup.sh
