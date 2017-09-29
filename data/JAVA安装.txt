@@ -1,0 +1,27 @@
+新建java安装目录
+sudo mkdir /usr/local/chao/java
+
+移动jdk-8u131-linux-x64.tar.gz 到 /usr/local/chao/java
+sudo cp /home/liko/download/jdk-8u131-linux-x64.tar.gz /usr/local/chao/java
+
+解压 
+tar zvxf jdk-8u144-linux-x64.tar.gz 
+
+删除安装文件 
+rm jdk-8u144-linux-x64.tar.gz
+
+配置环境变量(apt install gedit)
+sudo gedit ~/.bashrc 需要安装环境
+vi ~/.bashrc
+vi /etc/profile  使用此句
+在文件末尾添加如下文件
+export JAVA_HOME=/usr/local/chao/java/jdk1.8.0_144
+export JRE_HOME=${JAVA_HOME}/jre 
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib 
+export PATH=${JAVA_HOME}/bin:$PATH
+
+刷新配置
+source /etc/profile
+
+验证
+java -version
