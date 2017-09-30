@@ -1,27 +1,27 @@
-ĞÂ½¨java°²×°Ä¿Â¼
+æ–°å»ºjavaå®‰è£…ç›®å½•
 sudo mkdir /usr/local/chao/java
 
-ÒÆ¶¯jdk-8u131-linux-x64.tar.gz µ½ /usr/local/chao/java
+ç§»åŠ¨jdk-8u131-linux-x64.tar.gz åˆ° /usr/local/chao/java
 sudo cp /home/liko/download/jdk-8u131-linux-x64.tar.gz /usr/local/chao/java
 
-½âÑ¹ 
-tar zvxf jdk-8u144-linux-x64.tar.gz 
+è§£å‹
+tar zvxf jdk-8u144-linux-x64.tar.gz
 
-É¾³ı°²×°ÎÄ¼ş 
+åˆ é™¤å®‰è£…æ–‡ä»¶
 rm jdk-8u144-linux-x64.tar.gz
 
-ÅäÖÃ»·¾³±äÁ¿(apt install gedit)
-sudo gedit ~/.bashrc ĞèÒª°²×°»·¾³
+é…ç½®ç¯å¢ƒå˜é‡(apt install gedit)
+sudo gedit ~/.bashrc éœ€è¦å®‰è£…ç¯å¢ƒ
 vi ~/.bashrc
-vi /etc/profile  Ê¹ÓÃ´Ë¾ä
-ÔÚÎÄ¼şÄ©Î²Ìí¼ÓÈçÏÂÎÄ¼ş
+vi /etc/profile  ä½¿ç”¨æ­¤å¥
+åœ¨æ–‡ä»¶æœ«å°¾æ·»åŠ å¦‚ä¸‹æ–‡ä»¶
 export JAVA_HOME=/usr/local/chao/java/jdk1.8.0_144
-export JRE_HOME=${JAVA_HOME}/jre 
-export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib 
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=${JAVA_HOME}/bin:$PATH
 
-Ë¢ĞÂÅäÖÃ
+åˆ·æ–°é…ç½®
 source /etc/profile
 
-ÑéÖ¤
+éªŒè¯
 java -version
