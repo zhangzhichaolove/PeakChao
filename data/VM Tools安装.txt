@@ -1,0 +1,6 @@
+然后打开终端解压命令：
+tar -xzvf VMwareTools-10.0.6-3595377.tar.gz
+
+进入解压后的目录，执行：
+sudo ./wmware-install.pl 
+然后就一直回车。
