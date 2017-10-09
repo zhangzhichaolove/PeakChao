@@ -1,3 +1,6 @@
+关机
+halt
+
 允许root账户登录
 执行sudo passwd root 设置root账户的密码
 sudo vim /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf
