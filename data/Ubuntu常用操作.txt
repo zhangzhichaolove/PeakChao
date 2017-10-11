@@ -1,3 +1,15 @@
+﻿删除目录的命令rm,rmdir
+rm -rf 目录名字
+-r 就是向下递归，管理有多少级目录，一并删除
+-f 就是直接强行删除，不作任何提示的意思
+
+ubuntu linux nvm 装nodejs
+
+1.安装nvm：
+   1.git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm
+   2.source ~/.nvm/nvm.sh
+   3. 终端输入：nvm --vesion 查看版本号
+
 关机
 halt
 
