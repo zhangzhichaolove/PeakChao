@@ -55,6 +55,14 @@ dns-nameserver 8.8.8.8
 sudo /etc/init.d/networking restart
 
 
+如果gateway配置出错，会报错如下错误：
+
+root@ubuntuServer01:/etc/network# sudo /etc/init.d/networking restart
+[....] Restarting networking (via systemctl): networking.serviceJob for networking.service failed because the control process exited with error code. See "systemctl status networking.service" and "journalctl -xe" for details.
+ failed!
+
+#netstat -rn 命令或者  route -n  查看现有的
+
 
 
 
