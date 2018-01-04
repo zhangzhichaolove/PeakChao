@@ -1,0 +1,80 @@
+
+LNMP	------------  https://lnmp.org/install.html
+
+安装LNMP稳定版
+wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz && tar zxf lnmp1.4.tar.gz && cd lnmp1.4 && ./install.sh lnmp
+
+默认安装lnmp可不写，如需要安装LNMPA或LAMP，将./install.sh 后面的参数替换为lnmpa或lamp即可。如需更改网站和数据库目录先修改安装包目录下的 lnmp.conf 文件。
+
+LAMP
+
+
+/usr/local/nginx/conf/
+
+/etc/init.d/nginx restart 重启
+
+Centos查看端口占用情况和开启端口命令
+
+
+Centos查看端口占用情况命令，比如查看80端口占用情况使用如下命令：
+ 
+lsof -i tcp:80
+ 
+列出所有端口
+ 
+netstat -ntlp
+
+1、开启端口（以80端口为例）
+ 
+      方法一：
+ 
+         /sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT   写入修改
+ 
+         /etc/init.d/iptables save   保存修改
+ 
+        service iptables restart    重启防火墙，修改生效
+ 
+       方法二：
+ 
+       vi /etc/sysconfig/iptables  打开配置文件加入如下语句:
+ 
+       -A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT   重启防火墙，修改完成
+ 
+ 
+ 
+2、关闭端口
+ 
+     方法一：
+ 
+         /sbin/iptables -I INPUT -p tcp --dport 80 -j DROP   写入修改
+ 
+         /etc/init.d/iptables save   保存修改
+ 
+        service iptables restart    重启防火墙，修改生效
+ 
+       方法二：
+ 
+       vi /etc/sysconfig/iptables  打开配置文件加入如下语句:
+ 
+       -A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j DROP   重启防火墙，修改完成
+ 
+ 
+ 
+3、查看端口状态
+ 
+      /etc/init.d/iptables status
+
+
+检查端口被哪个进程占用
+
+netstat -lnp|grep 88 
+
+查看进程的详细信息
+
+ps 1777
+
+杀掉进程
+
+kill -9 1777        #杀掉编号为1777的进程（请根据实际情况输入）
+
+
