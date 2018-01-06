@@ -35,6 +35,13 @@ mysql>select host, user from user;
 grant all privileges on *.* to 'root' @'%' identified by 'chaochao';
 flush privileges;
 
+mysql:1153 Got a packet bigger than ‘max_allowed_packet’ bytes的解决方法
+备份还原或数据导入报错1153：Got a packet bigger than‘max_allowed_packet’bytes的问题
+
+临时修改：
+
+mysql>set global max_allowed_packet=524288000; #修改 512M
+
 重启
 
 打开3306端口，命令如下：
