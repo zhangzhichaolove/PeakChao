@@ -1,5 +1,8 @@
-新建java安装目录
+﻿新建java安装目录
 sudo mkdir /usr/local/chao/java
+
+wget http://download.oracle.com/otn-pub/java/jdk/8u151-b12/e758a0de34e24606bca991d704f6dcbf/jdk-8u151-linux-i586.tar.gz?AuthParam=1510976673_7d6dd5f049cedb20912ef7d30f2ee081
+
 
 移动jdk-8u131-linux-x64.tar.gz 到 /usr/local/chao/java
 sudo cp /home/liko/download/jdk-8u131-linux-x64.tar.gz /usr/local/chao/java

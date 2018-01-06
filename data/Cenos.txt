@@ -1,80 +1,80 @@
 
 LNMP	------------  https://lnmp.org/install.html
 
-°²×°LNMPÎÈ¶¨°æ
+å®‰è£…LNMPç¨³å®šç‰ˆ
 wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz && tar zxf lnmp1.4.tar.gz && cd lnmp1.4 && ./install.sh lnmp
 
-Ä¬ÈÏ°²×°lnmp¿É²»Ğ´£¬ÈçĞèÒª°²×°LNMPA»òLAMP£¬½«./install.sh ºóÃæµÄ²ÎÊıÌæ»»Îªlnmpa»òlamp¼´¿É¡£ÈçĞè¸ü¸ÄÍøÕ¾ºÍÊı¾İ¿âÄ¿Â¼ÏÈĞŞ¸Ä°²×°°üÄ¿Â¼ÏÂµÄ lnmp.conf ÎÄ¼ş¡£
+é»˜è®¤å®‰è£…lnmpå¯ä¸å†™ï¼Œå¦‚éœ€è¦å®‰è£…LNMPAæˆ–LAMPï¼Œå°†./install.sh åé¢çš„å‚æ•°æ›¿æ¢ä¸ºlnmpaæˆ–lampå³å¯ã€‚å¦‚éœ€æ›´æ”¹ç½‘ç«™å’Œæ•°æ®åº“ç›®å½•å…ˆä¿®æ”¹å®‰è£…åŒ…ç›®å½•ä¸‹çš„ lnmp.conf æ–‡ä»¶ã€‚
 
 LAMP
 
 
 /usr/local/nginx/conf/
 
-/etc/init.d/nginx restart ÖØÆô
+/etc/init.d/nginx restart é‡å¯
 
-Centos²é¿´¶Ë¿ÚÕ¼ÓÃÇé¿öºÍ¿ªÆô¶Ë¿ÚÃüÁî
+CentosæŸ¥çœ‹ç«¯å£å ç”¨æƒ…å†µå’Œå¼€å¯ç«¯å£å‘½ä»¤
 
 
-Centos²é¿´¶Ë¿ÚÕ¼ÓÃÇé¿öÃüÁî£¬±ÈÈç²é¿´80¶Ë¿ÚÕ¼ÓÃÇé¿öÊ¹ÓÃÈçÏÂÃüÁî£º
- 
+CentosæŸ¥çœ‹ç«¯å£å ç”¨æƒ…å†µå‘½ä»¤ï¼Œæ¯”å¦‚æŸ¥çœ‹80ç«¯å£å ç”¨æƒ…å†µä½¿ç”¨å¦‚ä¸‹å‘½ä»¤ï¼š
+
 lsof -i tcp:80
- 
-ÁĞ³öËùÓĞ¶Ë¿Ú
- 
+
+åˆ—å‡ºæ‰€æœ‰ç«¯å£
+
 netstat -ntlp
 
-1¡¢¿ªÆô¶Ë¿Ú£¨ÒÔ80¶Ë¿ÚÎªÀı£©
- 
-      ·½·¨Ò»£º
- 
-         /sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT   Ğ´ÈëĞŞ¸Ä
- 
-         /etc/init.d/iptables save   ±£´æĞŞ¸Ä
- 
-        service iptables restart    ÖØÆô·À»ğÇ½£¬ĞŞ¸ÄÉúĞ§
- 
-       ·½·¨¶ş£º
- 
-       vi /etc/sysconfig/iptables  ´ò¿ªÅäÖÃÎÄ¼ş¼ÓÈëÈçÏÂÓï¾ä:
- 
-       -A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT   ÖØÆô·À»ğÇ½£¬ĞŞ¸ÄÍê³É
- 
- 
- 
-2¡¢¹Ø±Õ¶Ë¿Ú
- 
-     ·½·¨Ò»£º
- 
-         /sbin/iptables -I INPUT -p tcp --dport 80 -j DROP   Ğ´ÈëĞŞ¸Ä
- 
-         /etc/init.d/iptables save   ±£´æĞŞ¸Ä
- 
-        service iptables restart    ÖØÆô·À»ğÇ½£¬ĞŞ¸ÄÉúĞ§
- 
-       ·½·¨¶ş£º
- 
-       vi /etc/sysconfig/iptables  ´ò¿ªÅäÖÃÎÄ¼ş¼ÓÈëÈçÏÂÓï¾ä:
- 
-       -A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j DROP   ÖØÆô·À»ğÇ½£¬ĞŞ¸ÄÍê³É
- 
- 
- 
-3¡¢²é¿´¶Ë¿Ú×´Ì¬
- 
+1ã€å¼€å¯ç«¯å£ï¼ˆä»¥80ç«¯å£ä¸ºä¾‹ï¼‰
+
+      æ–¹æ³•ä¸€ï¼š
+
+         /sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT   å†™å…¥ä¿®æ”¹
+
+         /etc/init.d/iptables save   ä¿å­˜ä¿®æ”¹
+
+        service iptables restart    é‡å¯é˜²ç«å¢™ï¼Œä¿®æ”¹ç”Ÿæ•ˆ
+
+       æ–¹æ³•äºŒï¼š
+
+       vi /etc/sysconfig/iptables  æ‰“å¼€é…ç½®æ–‡ä»¶åŠ å…¥å¦‚ä¸‹è¯­å¥:
+
+       -A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT   é‡å¯é˜²ç«å¢™ï¼Œä¿®æ”¹å®Œæˆ
+
+
+
+2ã€å…³é—­ç«¯å£
+
+     æ–¹æ³•ä¸€ï¼š
+
+         /sbin/iptables -I INPUT -p tcp --dport 80 -j DROP   å†™å…¥ä¿®æ”¹
+
+         /etc/init.d/iptables save   ä¿å­˜ä¿®æ”¹
+
+        service iptables restart    é‡å¯é˜²ç«å¢™ï¼Œä¿®æ”¹ç”Ÿæ•ˆ
+
+       æ–¹æ³•äºŒï¼š
+
+       vi /etc/sysconfig/iptables  æ‰“å¼€é…ç½®æ–‡ä»¶åŠ å…¥å¦‚ä¸‹è¯­å¥:
+
+       -A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j DROP   é‡å¯é˜²ç«å¢™ï¼Œä¿®æ”¹å®Œæˆ
+
+
+
+3ã€æŸ¥çœ‹ç«¯å£çŠ¶æ€
+
       /etc/init.d/iptables status
 
 
-¼ì²é¶Ë¿Ú±»ÄÄ¸ö½ø³ÌÕ¼ÓÃ
+æ£€æŸ¥ç«¯å£è¢«å“ªä¸ªè¿›ç¨‹å ç”¨
 
-netstat -lnp|grep 88 
+netstat -lnp|grep 88
 
-²é¿´½ø³ÌµÄÏêÏ¸ĞÅÏ¢
+æŸ¥çœ‹è¿›ç¨‹çš„è¯¦ç»†ä¿¡æ¯
 
 ps 1777
 
-É±µô½ø³Ì
+æ€æ‰è¿›ç¨‹
 
-kill -9 1777        #É±µô±àºÅÎª1777µÄ½ø³Ì£¨Çë¸ù¾İÊµ¼ÊÇé¿öÊäÈë£©
+kill -9 1777        #æ€æ‰ç¼–å·ä¸º1777çš„è¿›ç¨‹ï¼ˆè¯·æ ¹æ®å®é™…æƒ…å†µè¾“å…¥ï¼‰
 
 

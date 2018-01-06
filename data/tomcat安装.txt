@@ -1,4 +1,4 @@
-上传完成后，进入该文件目录，使用如下命令解压：
+﻿上传完成后，进入该文件目录，使用如下命令解压：
 sudo tar -zxvf apache-tomcat-8.5.23.tar.gz
 
 移动到指定目录
@@ -18,7 +18,7 @@ export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=${JAVA_HOME}/bin:$PATH
 
 #tomcat
-export TOMCAT_HOME=/usr/local/chao/tomcat/apache-tomcat-8.5.23.tar.gz
+export TOMCAT_HOME=/usr/local/chao/tomcat/apache-tomcat-8.5.23
 
 开启
 sudo ./startup.sh
@@ -33,7 +33,22 @@ sudo ufw allow 8080
 sudo vi /etc/rc.local
 
 在最后一行之前加入如下信息
-/usr/local/chao/tomcatapache-tomcat-8.5.23.tar.gz/bin/startup.sh
+/usr/local/chao/tomcatapache-tomcat-8.5.23/bin/startup.sh
+
+1. 安装 iptables-persistent
+
+sudo apt-get update
+sudo apt-get install iptables-persistent
+
+2. 添加 80 端口跳转到 8080 规则
+
+sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+
+3. 保存跳转规则
+
+sudo service iptables-persistent save
+
+命令为：iptables -t nat -A PREROUTING -i etho -p tcp –dport 80 -j REDIRECT –to-port 8080，命令的意思差不多是将80端口导向到8080端口。
 
 报错问题
 vi setclasspath.sh
