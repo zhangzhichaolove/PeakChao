@@ -35,6 +35,11 @@ mysql>select host, user from user;
 grant all privileges on *.* to 'root' @'%' identified by 'chaochao';
 flush privileges;
 
+查看已有的iptables规则，以序号显示
+iptables -L -n --line-numbers
+
+iptables -D INPUT 5
+
 mysql:1153 Got a packet bigger than ‘max_allowed_packet’ bytes的解决方法
 备份还原或数据导入报错1153：Got a packet bigger than‘max_allowed_packet’bytes的问题
 
