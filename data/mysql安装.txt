@@ -47,6 +47,14 @@ mysql:1153 Got a packet bigger than ‘max_allowed_packet’ bytes的解决方�
 
 mysql>set global max_allowed_packet=524288000; #修改 512M
 
+用vi编辑器打开文档添加以下： vi /etc/sysconfig/iptables
+
+打开端口： -A INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT
+
+关闭端口： -A INPUT -p tcp -m state --state NEW -m tcp --dport 7777 -j DROP
+
+/etc/init.d/iptables restart 重启防火墙
+
 重启
 
 打开3306端口，命令如下：
