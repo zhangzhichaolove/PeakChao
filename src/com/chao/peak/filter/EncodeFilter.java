@@ -30,7 +30,8 @@ public class EncodeFilter implements Filter {
             response.setCharacterEncoding("UTF-8");
             filterChain.doFilter(servletRequest, response);
         } else {
-            response.setContentType("text/html;charset=utf-8");
+            response.setContentType("text/html;charset=utf-8");//application/json
+            //response.setContentType("application/json; charset=utf-8");
             //EnhanceRequest enhanceRequest = new EnhanceRequest(request);
             filterChain.doFilter(servletRequest, response);
         }
