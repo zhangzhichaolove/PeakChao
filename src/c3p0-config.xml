@@ -8,7 +8,7 @@
         </property>
         <property name="driverClass">com.mysql.jdbc.Driver</property>
         <!--<property name="jdbcUrl">jdbc:mysql://localhost:3306/peak</property>-->
-        <property name="jdbcUrl">jdbc:mysql://localhost:3306/peak?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;autoReconnectForPools=true</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/peak?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;autoReconnectForPools=true&amp;useSSL=false</property>
         <property name="user">root</property>
         <property name="password">chaochao</property>
         　　     <!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
